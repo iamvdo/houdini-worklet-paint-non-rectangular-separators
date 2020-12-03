@@ -1,0 +1,27 @@
+{
+  "name": "houdini-non-rectangular-separators",
+  "version": "1.0.0",
+  "description": "CSS Houdini paint worklet to draw simpleshapes as separators",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "houdini",
+    "worklet"
+  ],
+  "author": "Vincent De Oliveira",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamvdo/houdini-worklet-paint-non-rectangular-separators.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iamvdo/houdini-worklet-paint-non-rectangular-separators/issues"
+  },
+  "homepage": "https://github.com/iamvdo/houdini-worklet-paint-non-rectangular-separators#readme"
+}

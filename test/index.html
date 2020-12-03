@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <style>
+  html {
+    height: 100%;
+    background: radial-gradient(at 50% 200px, hsl(180, 100%, 50%), hsl(180, 70%, 30%));
+    font: 1em sans-serif;
+    color: #FFF;
+  }
+  .A {
+    width: 250px;
+    height: 350px;
+    margin: 50px auto;
+    background: linear-gradient(#fff 50%, #eee);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 3px rgba(0,0,0,.5), 0 5px 15px rgba(0,0,0,.4);
+    resize:  both;
+  }
+  .B, .C {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+  }
+  .B {
+    height: 200px;
+    padding-bottom: 30px;
+    background-color: hsl(0, 100%, 62%);
+    background-image: linear-gradient(hsl(296, 61%, 26%), hsl(0, 100%, 62%));
+    background-repeat: no-repeat;
+    border-bottom: 1px solid transparent;
+    border-image-source: radial-gradient(closest-corner at 50% -400px, hsl(0, 100%, 62%) 100%, transparent);
+    border-image-slice: 0 0 100% 0;
+    border-image-width: var(--separator-size);
+    border-image-outset: var(--separator-size);
+    --separator-shape: curve-left;
+    --separator-size: 75px;
+    --separator-shadow: .35;
+    --separator-shadow-color: rgba(0,0,0,.35);
+  }
+  .B.is-loaded {
+    border-image-source: paint(separator)
+  }
+  .C {
+    height: 150px;
+    color: #222;
+    padding-bottom: 50px;
+    font-size: 1.2em;
+  }
+  .D {
+    width: 80px;
+    height: 80px;
+    background: rgba(0,0,0,.35);
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  </style>
+</head>
+<body>
+  <div class="Demo">
+    <div class="A">
+      <div class="B" id="el">
+        <div class="D"></div>
+        We do things.
+      </div>
+      <div class="C">
+        Very wow.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    if ('paintWorklet' in CSS) {
+      el.classList.add('is-loaded');
+      CSS.paintWorklet.addModule('../index.js');
+    }
+  </script>
+</body>
+</html>
